@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Album</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 900px;
+      height: 550px;
+      background: #f2f2f2;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .album {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .album img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hover full-size effect */
+    .album img:hover {
+      position: relative;
+      z-index: 10;
+      transform: scale(2); /* Enlarge image */
+      object-fit: contain; /* Show full picture */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Bubble Navigation */
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background: #ddd;
+      border-top: 1px solid #ccc;
+      gap: 20px;
+    }
+
+    .nav a {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
+      color: #555;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    .nav a:hover {
+      background: #333;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .nav a.active {
+      background: #111;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Scrollable Album -->
+    <div class="main-content">
+      <div class="album">
+        <img src="img/album/img1.jpg" alt="Photo 1">
+        <img src="img/album/img2.jpg" alt="Photo 2">
+        <img src="img/album/img3.jpg" alt="Photo 3">
+        <img src="img/album/img4.jpg" alt="Photo 4">
+        <img src="img/album/img5.jpg" alt="Photo 5">
+        <img src="img/album/img6.jpg" alt="Photo 6">
+        <img src="img/album/img7.jpg" alt="Photo 7">
+        <img src="img/album/img8.jpg" alt="Photo 8">
+        <img src="img/album/img9.jpg" alt="Photo 9">
+        <img src="img/album/img10.jpg" alt="Photo 10">
+        <img src="img/album/img11.jpg" alt="Photo 11">
+        <img src="img/album/img12.jpg" alt="Photo 12">
+        <img src="img/album/img13.jpg" alt="Photo 13">
+        <img src="img/album/img14.jpg" alt="Photo 14">
+        <img src="img/album/img15.jpg" alt="Photo 15">
+        <img src="img/album/img16.jpg" alt="photo 16">
+        <img src="img/album/img17.jpg" alt="photo 17">
+        <img src="img/album/img18.jpg" alt="photo 18">
+        <img src="img/album/img19.jpg" alt="photo 19">
+        <img src="img/album/img20.jpg" alt="photo 20">
+        <img src="img/album/img21.jpg" alt="photo 21">
+        <img src="img/album/img22.jpg" alt="photo 22">
+        <img src="img/album/img23.jpg" alt="photo 23">
+        <img src="img/album/img24.jpg" alt="photo 24">
+        <img src="img/album/img25.jpg" alt="photo 25">
+        <img src="img/album/img26.jpg" alt="photo 26">
+        <img src="img/album/img27.jpg" alt="photo 27">
+        <img src="img/album/img28.jpg" alt="photo 28">
+        <img src="img/album/img29.jpg" alt="photo 29">
+        <img src="img/album/img30.jpg" alt="photo 30">
+        <img src="img/album/img31.jpg" alt="photo 31">
+        <img src="img/album/img32.jpg" alt="photo 32">
+        <img src="img/album/img33.jpg" alt="photo 33">
+        <img src="img/album/img34.jpg" alt="photo 34">
+        <img src="img/album/img35.jpg" alt="photo 35">
+        <img src="img/album/img36.jpg" alt="photo 36">
+        <img src="img/album/img37.jpg" alt="photo 37">
+        <img src="img/album/img38.jpg" alt="photo 38">
+        <img src="img/album/img39.jpg" alt="photo 39">
+        <img src="img/album/img40.jpg" alt="photo 40">
+        <img src="img/album/img41.jpg" alt="photo 41">
+        <img src="img/album/img42.jpg" alt="photo 42">
+        <img src="img/album/img43.jpg" alt="photo 43">
+        <img src="img/album/img44.jpg" alt="photo 44">
+        <img src="img/album/img45.jpg" alt="photo 45">
+        <img src="img/album/img46.jpg" alt="photo 46">
+        <img src="img/album/img47.jpg" alt="photo 47">
+        <img src="img/album/img48.jpg" alt="photo 48">
+        <img src="img/album/img49.jpg" alt="photo 49">
+        <img src="img/album/img50.jpg" alt="photo 50">
+        <img src="img/album/img51.jpg" alt="photo 51">
+        <img src="img/album/img52.jpg" alt="photo 52">
+        <img src="img/album/img53.jpg" alt="photo 53">
+        <img src="img/album/img54.jpg" alt="photo 54">
+        <img src="img/album/img55.jpg" alt="photo 55">
+      </div>
+    </div>
+
+    <!-- Bubble navigation -->
+    <div class="nav">
+      <a href="index.html">🏠</a>
+      <a href="album.html" class="active">📷</a>
+    </div>
+  </div>
+</body>
+</html>
+
