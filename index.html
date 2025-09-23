@@ -22,10 +22,10 @@
       align-items: center;
       width: 80%;
       max-width: 1500px;
-      min-height:800px;
+      min-height: 800px;  /* Taller card */
       background: white;
       border-radius: 20px;
-      padding: 40px;
+      padding: 50px;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
       overflow: hidden;
       position: relative;
@@ -38,18 +38,17 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      /*height: auto;*/
     }
 
     .slideshow {
       display: flex;
       animation: slide 12s linear infinite;
-      gap: 20px;
+      gap: 25px;
     }
 
     .slideshow img {
-      width: 200px;
-      height: 300px;
+      width: clamp(220px, 20vw, 300px);
+      height: clamp(320px, 40vh, 450px);
       object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -70,31 +69,37 @@
     /* Right side (Text) */
     .text-content {
       flex: 1;
-      padding-left: 50px;
+      padding-left: 60px;
     }
 
     .text-content h1 {
-      font-size: 2rem;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
       font-weight: bold;
-      margin-bottom: 20px;
+      margin: 25px 0;
     }
 
     .text-content p {
-      font-size: 1rem;
-      margin: 5px 0;
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      margin: 8px 0;
       color: #333;
+    }
+
+    .text-content h5 {
+      margin-top: 15px;
+      font-size: clamp(0.9rem, 1vw, 1.1rem);
+      color: #666;
     }
 
     /* Message Button */
     .message-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 25px;
+      padding: 14px 28px;
       background: #6c5ce7;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       transition: 0.3s ease;
     }
 
@@ -113,7 +118,7 @@
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      width: 300px;
+      width: 320px;
       max-width: 90%;
       text-align: center;
       opacity: 0;
@@ -130,7 +135,7 @@
 
     .floating-message h2 {
       margin-bottom: 15px;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       color: #6c5ce7;
     }
 
@@ -141,7 +146,7 @@
 
     .close-btn {
       margin-top: 20px;
-      padding: 8px 15px;
+      padding: 10px 18px;
       background: #ff7675;
       color: white;
       border: none;
@@ -163,8 +168,8 @@
     }
 
     .bubble {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       background: white;
       display: flex;
@@ -173,7 +178,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: 0.3s;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
     .bubble:hover {
@@ -204,17 +209,40 @@
     }
 
     .music-icon {
-      font-size: 20px;
+      font-size: 22px;
     }
 
     .music-text {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 500;
       color: #333;
     }
 
     audio {
-      display: none; /* Hide default controls */
+      display: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .card {
+        flex-direction: column;
+        min-height: auto;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .slideshow-container {
+        margin-bottom: 20px;
+      }
+
+      .text-content {
+        padding-left: 0;
+      }
+
+      .slideshow img {
+        width: 60vw;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -300,9 +328,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
